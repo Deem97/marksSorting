@@ -79,6 +79,9 @@ char subject::getGrade(int mark){
     }else if(mark>=30){
         gradeCount[3]+=1;
         return 'D';
+    
+    }else if(mark>=20){
+	    return 'G';
     }else{
         gradeCount[4]+=1;
         return 'F';
