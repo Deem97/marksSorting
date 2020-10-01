@@ -101,6 +101,7 @@ float subject::findAvg(){
         sum = sum + (float)stdArray[i].mark;
     }
     avg = sum/noOfStudents;
+	sum = sum+100;
     return avg;
 }
 
