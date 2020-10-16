@@ -8,8 +8,8 @@
 
 using namespace std;
 
-const int MAXSUBJECTS = 10;
-const int MAXSTUDENTS = 100;
+const int MAX_SUBJECTS = 100;
+const int MAX_STUDENTS = 1000;
 
 struct student{
     
@@ -27,7 +27,7 @@ class subject{
         int gradeCount[5];
         float avg;
         float stdDev;
-        student stdArray[MAXSTUDENTS];
+        student stdArray[MAX_STUDENTS];
 
     public:
         
@@ -185,97 +185,4 @@ int main(){
     
     }
 
-    do{
-        cout<<"\t\t\t ____________________________"<<endl;
-        cout<<"\t\t\t|"<<"   .....MAIN MENU.....      |"<<endl<<"\t\t\t|                            |"<<endl;
-        cout<<"\t\t\t|"<<"1.Display Subject           |"<<endl;
-        cout<<"\t\t\t|"<<"2.Display Student           |"<<endl;
-        cout<<"\t\t\t|"<<"3.Display Subject Summary   |"<<endl;
-        cout<<"\t\t\t|"<<"4.Save Summaries            |"<<endl;
-        cout<<"\t\t\t|"<<"5.Exit                      |"<<endl;
-        cout<<"\t\t\t|____________________________|"<<endl<<endl;
-        cout<<"\t\t"<<"Enter Your Option:";
-        cin>>option;
-        cout<<endl;
-        
-        switch(option){
-
-            case 1:
-                try{
-                    cout<<"Enter the Subject Code:";
-                    cin>>code;
-                    if(code.length()!=7){
-                        throw 1;
-                    }
-                    cout<<endl;
-                    flag=1;
-                    for(int i=0;i<MAXSUBJECTS;i++){
-                        if(code.compare(list[i].getSubData())==0){
-                            flag=0;
-                            list[i].displaySub();
-                            break;
-                        }
-                    }
-                    if(flag==1){
-                        cout<<"ERROR!Subject Not Found"<<endl;
-                        flag=0;
-                    }
-                    cout<<endl;
-                }
-                catch (int x){
-                    cout<<"ERROR!Invalid Subject Code"<<endl;
-                }
-                system("pause");
-                break;
-            case 2:
-                try{
-                    cout<<"Enter the Index Number:";
-                    cin>>code;
-                    if(code.length()!=8){
-                        throw 1;
-                    }
-                    cout<<endl;
-                    cout<<"Subject"<<"    "<<"Marks"<<"     "<<"Grade"<<endl<<endl;
-                    for(int i=0;i<MAXSUBJECTS;i++){
-                        list[i].displayStd(code);
-                    }
-                    cout<<endl;
-                    
-                }
-                catch (int x){
-                    cout<<"ERROR!Invalid Index Number"<<endl;
-                }
-                system("pause");
-                break;
-            case 3:
-                try{
-                    cout<<"Enter the Subject Code:";
-                    cin>>code;
-                    if(code.length()!=7){
-                        throw 1;
-                    }
-                    cout<<endl;
-                    for(int i=0;i<MAXSUBJECTS;i++){
-                        if(code.compare(list[i].getSubData())==0){
-                            list[i].displaySubSum();
-                            break;
-                        }
-                    }
-                    cout<<endl;
-                }
-                catch (int x){
-                    cout<<"ERROR!Invalid Subject Code"<<endl;
-                }
-                system("pause");
-                break;
-            case 4:
-                saveSubSum(list);
-                system("pause");
-                break;
-            case 5:
-                exit(0);
-        }   
-    }while(1);
-
-    return 0;
-}
+    
