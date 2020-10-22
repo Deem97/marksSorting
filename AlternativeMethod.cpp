@@ -88,10 +88,8 @@ int openFile(Results sub[10], string filename_i){
 		}
 		myfile.close();
 	}
-	else{
-//		cout << "Unable to open file, enter valid file name" << endl; 
+	else{ 
 		return 0;
-//		goto label;
 	}
 	return j;
 }
