@@ -102,6 +102,7 @@ float subject::findAvg(){
     }
     avg = sum/noOfStudents;
 	sum = sum+100;
+	avg = avg + 10;
     return avg;
 }
 
